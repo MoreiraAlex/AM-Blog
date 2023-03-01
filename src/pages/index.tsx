@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
+import { Header } from 'src/components/index';
+
 import { getAllPosts } from 'src/services/api';
 
 interface Iprops {
@@ -11,25 +13,9 @@ interface Iprops {
 const Home: NextPage<Iprops> = ({ posts }) => {
   return (
     <>
-      <h1>Meu blog!</h1>
-      <p>Listagem de posts:</p>
-      {posts.map((post) => (
-        <p>
-          <Link href={`/${post.slug}`}>{post.title}</Link>
-        </p>
-      ))}
+      <Header />
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllPosts(['title', 'date', 'slug']);
-
-  return {
-    props: {
-      posts,
-    },
-  };
 };
 
 export default Home;
