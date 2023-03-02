@@ -2,12 +2,16 @@ import type { NextPage } from 'next';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Container, Flex } from 'components/index';
 import { HeaderComponent } from './styles';
 
+import Logo from 'src/assets/img/images.png';
+
 import { CiSearch } from 'react-icons/ci';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { BiMenu, BiX } from 'react-icons/bi';
 import {
   SlSocialFacebook,
   SlSocialInstagram,
@@ -19,11 +23,10 @@ import {
   SlSocialTumblr,
 } from 'react-icons/sl';
 
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-
 const Header: NextPage = () => {
-  const slider = useRef<HTMLDivElement | null>(null);
+  const slider = useRef<HTMLUListElement>(null);
 
+  const [button, setButton] = useState(false);
   function MoveSlider(side: number) {
     if (slider.current) {
       if (side > 0) {
@@ -38,17 +41,15 @@ const Header: NextPage = () => {
     <HeaderComponent>
       <Container>
         <Flex align='stretch'>
-          {/* <Image
-          src=''
-          alt='Logo da empresa'
-          width={100}
-          height={100}
-          quality={100}
-        /> */}
-          <h1>AmBlog</h1>
-          <Flex direction='column' justify='space-around' padding='0 10px'>
-            <Flex>
-              <Flex justify='flex-start' gap='5px'>
+          <Image src={Logo} alt='Logo da empresa' quality={100} />
+          <Flex
+            className='navArea'
+            direction='column'
+            justify='space-evenly'
+            padding='0 10px'
+          >
+            <Flex className='navFirstLine'>
+              <Flex className='SocialIcons' justify='flex-start' gap='5px'>
                 <Link href='/'>
                   <SlSocialFacebook />
                 </Link>
@@ -74,6 +75,13 @@ const Header: NextPage = () => {
                   <SlSocialTumblr />
                 </Link>
               </Flex>
+              <button
+                onClick={() => {
+                  button ? setButton(false) : setButton(true);
+                }}
+              >
+                {button ? <BiX /> : <BiMenu />}
+              </button>
               <form>
                 <label>
                   <input placeholder='O que procura?' />
@@ -81,13 +89,22 @@ const Header: NextPage = () => {
                 </label>
               </form>
             </Flex>
-            <Flex>
+            <Flex className='navSecondLine'>
               <nav>
                 <span onClick={() => MoveSlider(1)}>
                   <IoIosArrowBack />
                 </span>
-                {/* @ts-ignore */}
-                <ul ref={slider}>
+                <ul
+                  ref={slider}
+                  className={`${button ? 'mobile_active' : null}`}
+                >
+                  <li>
+                    <form>
+                      <label>
+                        <input placeholder='O que procura?' />
+                      </label>
+                    </form>
+                  </li>
                   <li>Categoria 1</li>
                   <li>Categoria 2</li>
                   <li>Categoria 3</li>
@@ -99,6 +116,33 @@ const Header: NextPage = () => {
                   <li>Categoria 5</li>
                   <li>Categoria 5</li>
                   <li>Categoria 5</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
+                  <li>Categoria 6</li>
                   <li>Categoria 6</li>
                 </ul>
                 <span onClick={() => MoveSlider(0)}>

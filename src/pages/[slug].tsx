@@ -7,6 +7,7 @@ import { getAllPosts, getPost } from 'src/services/api';
 import { toHTML } from 'src/services/markdown';
 
 import ReactMarkdown from 'react-markdown';
+import Header from 'components/header';
 
 interface Iprops {
   post: { [key: string]: string };
@@ -15,6 +16,7 @@ interface Iprops {
 const Page: NextPage<Iprops> = ({ post }) => {
   return (
     <>
+      <Header />
       <h1>{post.title}</h1>
       <p>
         {post.author} · {post.date}

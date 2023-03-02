@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import type { ReactNode } from 'react';
 
 import { Iprops } from './styles';
-import { Style } from './styles';
+import { FlexComponent } from './styles';
 
 interface Iprop extends Iprops {
   children: ReactNode;
@@ -10,6 +10,7 @@ interface Iprop extends Iprops {
 
 const Flex: NextPage<Iprop> = ({
   children,
+  className,
   direction,
   align,
   justify,
@@ -19,7 +20,8 @@ const Flex: NextPage<Iprop> = ({
   margin,
 }) => {
   return (
-    <Style
+    <FlexComponent
+      className={className}
       direction={direction}
       align={align}
       justify={justify}
@@ -29,7 +31,7 @@ const Flex: NextPage<Iprop> = ({
       margin={margin}
     >
       {children}
-    </Style>
+    </FlexComponent>
   );
 };
 
