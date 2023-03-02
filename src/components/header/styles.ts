@@ -134,7 +134,6 @@ export const HeaderComponent = styled.header`
         right: 0;
         width: 0;
         height: 0;
-        /* padding: 100px; */
         overflow-y: scroll;
         visibility: hidden;
         transition: 1s ease-out;
