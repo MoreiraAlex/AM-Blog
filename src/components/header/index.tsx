@@ -49,7 +49,7 @@ const Header: NextPage = () => {
             padding='0 10px'
           >
             <Flex className='navFirstLine'>
-              <Flex className='SocialIcons' justify='flex-start' gap='5px'>
+              <Flex className='socialIcons' justify='flex-start' gap='5px'>
                 <Link href='/'>
                   <SlSocialFacebook />
                 </Link>
@@ -96,7 +96,7 @@ const Header: NextPage = () => {
                 </span>
                 <ul
                   ref={slider}
-                  className={`${button ? 'mobile_active' : null}`}
+                  className={`${button ? 'mobileActive' : null}`}
                 >
                   <li>
                     <form>

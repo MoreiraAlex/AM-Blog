@@ -14,7 +14,7 @@ export const HeaderComponent = styled.header`
     width: 85vw;
   }
 
-  & .navFirstLine > .SocialIcons {
+  & .navFirstLine > .socialIcons {
     height: 30px;
 
     @media (max-width: 450px) {
@@ -199,7 +199,7 @@ export const HeaderComponent = styled.header`
       }
     }
 
-    & .mobile_active {
+    & .mobileActive {
       width: 100vw;
       height: 100vh;
       visibility: visible;
