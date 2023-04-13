@@ -16,6 +16,7 @@ const Flex: NextPage<Iprop> = ({
   justify,
   gap,
   width,
+  height,
   padding,
   margin,
   wrap,
@@ -28,6 +29,7 @@ const Flex: NextPage<Iprop> = ({
       justify={justify}
       gap={gap}
       width={width}
+      height={height}
       padding={padding}
       margin={margin}
       wrap={wrap}

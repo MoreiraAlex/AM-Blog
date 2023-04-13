@@ -7,6 +7,7 @@ export interface Iprops {
   justify?: string;
   gap?: string;
   width?: string;
+  height?: string;
   padding?: string;
   margin?: string;
   wrap?: string;
@@ -19,7 +20,8 @@ export const FlexComponent = styled.section<Iprops>`
     align-items: ${(props) => props.align || 'center'};
     justify-content: ${(props) => props.justify || 'center'};
     gap: ${(props) => props.gap || null};
-    width: ${(props) => props.width || '100%'};
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
     padding: ${(props) => props.padding || '0'};
     margin: ${(props) => props.margin || '0'};
     flex-wrap: ${(props) => props.wrap || 'nowrap'};
