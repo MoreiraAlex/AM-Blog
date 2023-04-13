@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 
-import { Header } from 'src/components/index';
+import { HeaderHome } from 'components/index';
 
 interface Iprops {
   posts: { [key: string]: string }[];
@@ -9,7 +9,7 @@ interface Iprops {
 const Home: NextPage<Iprops> = ({ posts }) => {
   return (
     <>
-      <Header />
+      <HeaderHome />
     </>
   );
 };

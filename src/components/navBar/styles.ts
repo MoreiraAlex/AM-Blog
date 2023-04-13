@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderComponent = styled.header`
-  @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
-
+export const NavBarComponent = styled.header`
   background-color: ${(props) => props.theme.color.gray};
 
   & a {

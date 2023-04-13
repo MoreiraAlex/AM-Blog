@@ -1,4 +1,4 @@
-import Header from 'components/header';
+import NavBar from 'components/navBar';
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ interface Iprops {
 const Home: NextPage<Iprops> = ({ posts }) => {
   return (
     <>
-      <Header />
+      <NavBar />
       <h1>Meu blog!</h1>
       <p>Listagem de posts:</p>
       {posts.map((post) => (

@@ -1,5 +1,5 @@
-import Header from './header';
-import Flex from './layout/flex';
-import Container from './layout/maxWidth';
+import HeaderHome from './layout/headerHome';
+import Flex from './flex';
+import Container from './container';
 
-export { Header, Flex, Container };
+export { HeaderHome, Flex, Container };

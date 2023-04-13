@@ -4,7 +4,7 @@ export interface Iprops {
   width?: string;
 }
 
-export const Style = styled.section<Iprops>`
+export const ContainerComponent = styled.section<Iprops>`
   margin: 0 auto;
   max-width: ${(props) => props.width || '1200px'};
 `;
