@@ -11,6 +11,7 @@ export interface Iprops {
   padding?: string;
   margin?: string;
   wrap?: string;
+  grow?: string;
 }
 
 export const FlexComponent = styled.section<Iprops>`
@@ -25,5 +26,6 @@ export const FlexComponent = styled.section<Iprops>`
     padding: ${(props) => props.padding || '0'};
     margin: ${(props) => props.margin || '0'};
     flex-wrap: ${(props) => props.wrap || 'nowrap'};
+    flex-grow: ${(props) => props.grow};
   }
 `;

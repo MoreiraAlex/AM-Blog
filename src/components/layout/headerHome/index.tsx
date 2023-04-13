@@ -14,13 +14,7 @@ const HeaderHome: NextPage = () => {
     <>
       <NavBar />
       <Container>
-        <Flex
-          width='100%'
-          padding='10px'
-          gap='10px'
-          wrap='wrap'
-          justify='center'
-        >
+        <Flex padding='10px' gap='10px' wrap='wrap' justify='center' grow='1'>
           <BannerComponentG img={img}>
             <BannerChildren
               categoria='Comida'
@@ -29,7 +23,7 @@ const HeaderHome: NextPage = () => {
               data='13/04/2023'
             />
           </BannerComponentG>
-          <Flex direction='column' width='49%' gap='10px' align='center'>
+          <Flex direction='column' gap='10px' align='center' grow='1'>
             <BannerComponentM img={img}>
               <BannerChildren
                 categoria='Comida'
@@ -38,7 +32,7 @@ const HeaderHome: NextPage = () => {
                 data='13/04/2023'
               />
             </BannerComponentM>
-            <Flex width='100%' gap='10px'>
+            <Flex gap='10px' wrap='wrap' width='100%'>
               <BannerComponentP img={img}>
                 <BannerChildren
                   categoria='Comida'

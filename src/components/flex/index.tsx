@@ -20,6 +20,7 @@ const Flex: NextPage<Iprop> = ({
   padding,
   margin,
   wrap,
+  grow,
 }) => {
   return (
     <FlexComponent
@@ -33,6 +34,7 @@ const Flex: NextPage<Iprop> = ({
       padding={padding}
       margin={margin}
       wrap={wrap}
+      grow={grow}
     >
       {children}
     </FlexComponent>

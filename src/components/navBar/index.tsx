@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-// import { Limelight } from 'next/font/google';
 
 import { NavBarComponent } from './styles';
 
 import { Flex, Container } from 'components/index';
-
-// const limelight = Limelight({ weight: '400' });
+import { FaSearch } from 'react-icons/fa';
 
 const NavBar: NextPage = () => {
   return (
@@ -16,9 +14,10 @@ const NavBar: NextPage = () => {
           <h1>
             <Link href='#'>AM BLOG</Link>
           </h1>
-          <Flex align='center' justify='space-between' width='400px'>
+          <Flex align='center' gap='20px'>
             <Link href='#'>Contato</Link>
             <form>
+              <FaSearch />
               <label>
                 <input placeholder='O que procura?' />
               </label>
