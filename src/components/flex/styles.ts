@@ -20,12 +20,12 @@ export const FlexComponent = styled.section<Iprops>`
     flex-direction: ${(props) => props.direction || 'row'};
     align-items: ${(props) => props.align || 'center'};
     justify-content: ${(props) => props.justify || 'center'};
-    gap: ${(props) => props.gap || null};
+    gap: ${(props) => props.gap};
     width: ${(props) => props.width};
     height: ${(props) => props.height};
-    padding: ${(props) => props.padding || '0'};
-    margin: ${(props) => props.margin || '0'};
-    flex-wrap: ${(props) => props.wrap || 'nowrap'};
+    padding: ${(props) => props.padding};
+    margin: ${(props) => props.margin};
+    flex-wrap: ${(props) => props.wrap};
     flex-grow: ${(props) => props.grow};
   }
 `;
