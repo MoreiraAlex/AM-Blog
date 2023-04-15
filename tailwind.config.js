@@ -7,11 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      textColor: {
+        'ligth-theme-100': '#E0E0E0',
+        'ligth-theme-200': '#BCBCBC',
+        'ligth-theme-300': '#262626',
+        'ligth-theme-400': '#4CE0D7'
       },
+      backgroundColor: {
+        'ligth-theme-100': '#4CE0D7',
+        'ligth-theme-200': '#36ACA5'
+      }
     },
   },
   plugins: [],
