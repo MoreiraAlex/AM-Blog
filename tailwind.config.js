@@ -5,6 +5,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       textColor: {
@@ -15,7 +16,8 @@ module.exports = {
       },
       backgroundColor: {
         'ligth-theme-100': '#4CE0D7',
-        'ligth-theme-200': '#36ACA5'
+        'ligth-theme-200': '#36ACA5',
+        'dark-theme-100': '#999999'
       }
     },
   },

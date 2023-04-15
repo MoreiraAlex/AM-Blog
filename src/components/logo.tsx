@@ -12,7 +12,7 @@ export const Logo = () => {
         >
           AM Blog
         </h1>
-        <span className='h-1/2 w-1/2 bg-ligth-theme-100 block absolute inset-1/2'></span>
+        <span className='h-1/2 w-1/2 bg-ligth-theme-100 dark:bg-dark-theme-100 block absolute inset-1/2'></span>
       </div>
     </Link>
   );

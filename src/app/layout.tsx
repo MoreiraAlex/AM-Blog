@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='pt-br'>
-      <body className={`${poppins.className} text-ligth-theme-300`}>
+      <body className={`${poppins.className} text-ligth-theme-300 p-4`}>
         {children}
       </body>
     </html>

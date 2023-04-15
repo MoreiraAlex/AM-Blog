@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
     <nav>
-      <div className='container mx-auto flex justify-between items-center p-5 relative'>
+      <div className='container mx-auto flex justify-between items-center relative'>
         <Logo />
         <div className='hidden sm:flex items-center space-x-16'>
           <Link
@@ -34,7 +34,7 @@ export const Navbar = () => {
       >
         <div className='flex flex-col items-end p-5 space-y-32 container mx-auto'>
           <BiX
-            className='w-10 h-10 rounded-full p-3 border m-0 border-black text-center'
+            className='w-10 h-10 rounded-full p-3 border m-0 border-black text-center hover:text-white hover:border-white duration-300'
             onClick={() => setMenu(false)}
           />
           <div className='mx-auto space-y-10'>
@@ -50,11 +50,12 @@ export const Navbar = () => {
                 <label>
                   <input
                     type='text'
+                    required
                     placeholder='Titulos, palavras chaves ou categorias...'
                     className='rounded-3xl h-16 sm:w-8/12 px-5 w-full outline-none'
                   />
                 </label>
-                <button className='rounded-3xl h-16 w-full sm:w-3/12 bg-ligth-theme-200 text-white font-bold uppercase'>
+                <button className='rounded-3xl h-16 w-full sm:w-3/12 bg-ligth-theme-200 text-white font-bold uppercase hover:text-ligth-theme-400 duration-300'>
                   Procurar
                 </button>
               </form>
