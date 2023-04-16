@@ -16,3 +16,8 @@
   }
 }
 
+@layer utilities {
+  .scroll-bar::-webkit-scrollbar {
+      display: none;
+  }
+}
