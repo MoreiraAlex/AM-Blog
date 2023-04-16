@@ -2,7 +2,7 @@ import { Navbar } from './navbar';
 
 export const Header = () => {
   return (
-    <header>
+    <header className='space-y-10'>
       <Navbar />
       <div className='sm:container mx-auto m-4 bg-stone-400 text-center h-full flex flex-col space-y-8 rounded-2xl px-2 py-40 sm:px-12 sm:pt-64 items-center md:items-start md:text-left'>
         <h3 className='text-xs uppercase font-bold text-white'>

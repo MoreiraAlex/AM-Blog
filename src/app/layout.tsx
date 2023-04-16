@@ -1,3 +1,4 @@
+import { Categories, Header, LateralBar } from '@/components';
 import './globals.css';
 import { Poppins } from 'next/font/google';
 
@@ -16,9 +17,19 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body
-        className={`${poppins.className} text-ligth-theme-300 p-4 space-y-10`}
+        className={`${poppins.className} text-ligth-theme-300 p-4 space-y-20 bg-zinc-100`}
       >
-        {children}
+        <header>
+          <Header />
+        </header>
+        <main className='space-y-20'>
+          <Categories />
+          <div className='container mx-auto w-full lg:grid grid-cols-7 xl:grid-cols-4 gap-5 lg:space-x-5'>
+            <LateralBar />
+            {children}
+          </div>
+        </main>
+        <footer>Footer</footer>
       </body>
     </html>
   );

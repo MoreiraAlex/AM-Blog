@@ -13,7 +13,6 @@ export const Categories = () => {
       } else {
         slider.current.scrollLeft += slider.current.children[0].clientWidth;
       }
-      console.log(slider.current.children[0].clientWidth);
     }
   }
   return (
@@ -30,7 +29,6 @@ export const Categories = () => {
           className='flex overflow-x-auto scroll-smooth snap-x w-full sm:w-10/12 scroll-bar'
           ref={slider}
         >
-          <CategoryCard title='Desenvolvimento' />
           <CategoryCard title='Redes' />
           <CategoryCard title='Inteligência artificial' />
           <CategoryCard title='Dados' />
