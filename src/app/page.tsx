@@ -16,7 +16,7 @@ export default function Home() {
       </PostCard>
       <section className='space-y-5'>
         <h2 className='text-2xl font-bold md:text-3xl'>Trending</h2>
-        <div className='space-y-5 lg:flex lg:space-y-0 lg:space-x-5'>
+        <div className='space-y-5 lg:flex lg:justify-center lg:space-y-0 lg:space-x-5'>
           <PostCard
             author='Alex Moreira'
             date='16 Abril, 2023'

@@ -21,12 +21,12 @@ export const PostCard = ({
 }: Iprops) => {
   return (
     <section
-      className={`rounded-2xl bg-white shadow-lg flex flex-col md:flex-row  ${
-        col ? 'lg:flex-col' : ''
+      className={`rounded-2xl bg-white shadow-lg flex flex-col sm:flex-row  ${
+        col ? `lg:flex-col ${hero ? '' : 'lg:max-w-md'}` : ''
       }`}
     >
       <div
-        className={`w-full h-64 bg-stone-400 rounded-2xl p-8 md:h-auto 2xl:w-1/2 ${
+        className={`w-full h-64 bg-stone-400 rounded-2xl p-8 sm:h-auto 2xl:w-1/2 ${
           col ? `2xl:w-full ${hero ? 'lg:h-96' : 'lg:h-64'}` : ''
         }`}
       >
