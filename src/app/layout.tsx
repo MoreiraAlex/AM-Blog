@@ -1,6 +1,9 @@
 import { Categories, Header, LateralBar } from '@/components';
 import './globals.css';
 import { Poppins } from 'next/font/google';
+import { Logo } from '@/components/logo';
+import Link from 'next/link';
+import { FaBehance, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Am Blog',
@@ -29,7 +32,49 @@ export default function RootLayout({
             {children}
           </div>
         </main>
-        <footer>Footer</footer>
+        <footer className='-m-4 bg-white rounded-tl-2xl rounded-tr-2xl'>
+          <div className='container mx-auto px-4 py-8 flex flex-col items-center space-y-5'>
+            <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
+              <Logo />
+              <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
+                <Link
+                  href='#'
+                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                >
+                  <FaLinkedinIn className='md:text-xl' />
+                </Link>
+                <Link
+                  href='#'
+                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                >
+                  <FaBehance className='md:text-xl' />
+                </Link>
+                <Link
+                  href='#'
+                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                >
+                  <FaGithub className='md:text-xl' />
+                </Link>
+              </div>
+            </div>
+            <hr className='w-full' />
+            <div className='flex flex-col items-center justify-center text-center'>
+              <span className='text-sm font-bold'>
+                AM Blog &copy; 2023 Todos os direitos reservados.
+              </span>
+              <span className='text-sm font-bold'>
+                Desenvolvido por{' '}
+                <a
+                  className='text-ligth-basic-200 hover:text-ligth-basic-100'
+                  href='https://github.com/MoreiraAlex'
+                  target='_blank'
+                >
+                  Alex Moreira
+                </a>
+              </span>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
