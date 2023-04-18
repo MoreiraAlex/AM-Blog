@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body
-        className={`${poppins.className} text-ligth-theme-300 p-4 space-y-20 bg-zinc-100`}
+        className={`${poppins.className} text-ligth-basic-300 p-4 space-y-20 bg-zinc-100`}
       >
         <header>
           <Header />
@@ -39,19 +39,19 @@ export default function RootLayout({
               <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
                 <Link
                   href='#'
-                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                  className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
                 >
                   <FaLinkedinIn className='md:text-xl' />
                 </Link>
                 <Link
                   href='#'
-                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                  className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
                 >
                   <FaBehance className='md:text-xl' />
                 </Link>
                 <Link
                   href='#'
-                  className='bg-ligth-theme-100 rounded-full p-2 hover:text-white hover:bg-ligth-theme-200 duration-300'
+                  className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
                 >
                   <FaGithub className='md:text-xl' />
                 </Link>
@@ -65,7 +65,7 @@ export default function RootLayout({
               <span className='text-sm font-bold'>
                 Desenvolvido por{' '}
                 <a
-                  className='text-ligth-basic-200 hover:text-ligth-basic-100'
+                  className='text-ligth-primary-100 hover:text-ligth-primary-200'
                   href='https://github.com/MoreiraAlex'
                   target='_blank'
                 >

@@ -9,7 +9,8 @@ export const Header = () => {
           Alex Moreira Blog
         </h3>
         <h2 className='sm:text-5xl text-4xl text-white'>
-          Bem-vindo ao <strong className='text-ligth-theme-400'>AM Blog</strong>
+          Bem-vindo ao{' '}
+          <strong className='text-ligth-primary-100'>AM Blog</strong>
         </h2>
         <p className='md:text-xl text-white lg:w-5/12'>
           Cobrimos todas as novidades e tendências do universo tecnológico,
