@@ -1,6 +1,11 @@
-import { Categories, PostCard, Header, LateralBar } from 'components/index';
+'use client';
+import { UseCategoryContext } from '@/lib/categoryProvider';
+import { PostCard } from 'components/index';
 
 export default function Home() {
+  const { True } = UseCategoryContext();
+  True?.();
+
   return (
     <div className='col-span-5 space-y-10 xl:col-span-3'>
       <PostCard

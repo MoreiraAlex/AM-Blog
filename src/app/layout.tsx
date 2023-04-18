@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google';
 import { Logo } from '@/components/logo';
 import Link from 'next/link';
 import { FaBehance, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { CategoryProvider } from '@/lib/categoryProvider';
 
 export const metadata = {
   title: 'Am Blog',
@@ -25,13 +26,15 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main className='space-y-20'>
-          <Categories />
-          <div className='container mx-auto w-full space-y-10 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-5 xl:grid-cols-4'>
-            <LateralBar />
-            {children}
-          </div>
-        </main>
+        <CategoryProvider>
+          <main className='space-y-20'>
+            <Categories />
+            <div className='container mx-auto w-full space-y-10 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-5 xl:grid-cols-4'>
+              <LateralBar />
+              {children}
+            </div>
+          </main>
+        </CategoryProvider>
         <footer className='-m-4 bg-white rounded-tl-2xl rounded-tr-2xl'>
           <div className='container mx-auto px-4 py-8 flex flex-col items-center space-y-5'>
             <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
