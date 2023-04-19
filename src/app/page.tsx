@@ -1,10 +1,24 @@
 'use client';
 import { UseCategoryContext } from '@/lib/categoryProvider';
+import { UseHeaderContext } from '@/lib/headerProvider';
 import { PostCard } from 'components/index';
 
 export default function Home() {
   const { True } = UseCategoryContext();
   True?.();
+
+  const { HeaderParams } = UseHeaderContext();
+
+  const params = {
+    title: 'Bem vindo ao',
+    keyword: 'AM BLOG',
+    subtitle: 'Alex Moreira Blog',
+    description:
+      'Cobrimos todas as novidades e tendências do universo tecnológico, desde os gadgets mais recentes até as notícias mais quentes do setor.',
+    styles: 'px-2 py-40 sm:px-12 sm:pt-64',
+  };
+
+  HeaderParams?.(params);
 
   return (
     <div className='col-span-5 space-y-10 xl:col-span-3'>

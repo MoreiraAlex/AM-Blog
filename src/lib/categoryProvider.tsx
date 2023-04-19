@@ -19,7 +19,6 @@ export function CategoryProvider({ children }: { children: ReactNode }) {
 
   function False() {
     setIsVisibleOpen(false);
-    return 'False';
   }
 
   function True() {
