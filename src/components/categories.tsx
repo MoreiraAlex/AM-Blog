@@ -28,7 +28,7 @@ export const Categories = () => {
     speed: 500,
     dots: true,
     autoplay: true,
-    autoplaySpeed: 500,
+    autoplaySpeed: 3000,
     pauseOnFocus: true,
     pauseOnHover: true,
     pauseOnDotsHover: true,
