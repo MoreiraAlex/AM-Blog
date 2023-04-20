@@ -5,6 +5,7 @@ import {
   FaBehance,
   FaArrowRight,
 } from 'react-icons/fa';
+import Icon from './icon';
 
 export const LateralBar = () => {
   return (
@@ -25,24 +26,21 @@ export const LateralBar = () => {
             aspernatur ipsam quos ab a rem inventore! Vero, odio consectetur?
           </p>
           <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
-            <Link
-              href='#'
-              className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-            >
-              <FaLinkedinIn className='text-xl' />
-            </Link>
-            <Link
-              href='#'
-              className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-            >
-              <FaBehance className='text-xl' />
-            </Link>
-            <Link
-              href='#'
-              className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-            >
-              <FaGithub className='text-xl' />
-            </Link>
+            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+              <Link href='#'>
+                <FaLinkedinIn />
+              </Link>
+            </Icon>
+            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+              <Link href='#'>
+                <FaBehance />
+              </Link>
+            </Icon>
+            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+              <Link href='#'>
+                <FaGithub />
+              </Link>
+            </Icon>
           </div>
         </div>
       </section>
@@ -67,9 +65,9 @@ export const LateralBar = () => {
         <h2 className='text-2xl font-bold'>Top views</h2>
         <div className='space-y-5'>
           <hr />
-          <div className='grid grid-cols-3 gap-x-4 '>
-            <div className='object-fill rounded-xl bg-stone-400'></div>
-            <div className='col-span-2 flex flex-col space-y-1'>
+          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
+            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
+            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
               <h3 className='text-sm font-bold'>
                 Por que a nuvem é essencial para o sucesso do seu negócio
               </h3>
@@ -84,9 +82,9 @@ export const LateralBar = () => {
         </div>
         <div className='space-y-5'>
           <hr />
-          <div className='grid grid-cols-3 gap-x-4 '>
-            <div className='object-fill rounded-xl bg-stone-400'></div>
-            <div className='col-span-2 flex flex-col space-y-1'>
+          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
+            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
+            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
               <h3 className='text-sm font-bold'>
                 Inteligência artificial: a nova fronteira da tecnologia
               </h3>
@@ -101,9 +99,9 @@ export const LateralBar = () => {
         </div>
         <div className='space-y-5'>
           <hr />
-          <div className='grid grid-cols-3 gap-x-4 '>
-            <div className='object-fill rounded-xl bg-stone-400'></div>
-            <div className='col-span-2 flex flex-col space-y-1'>
+          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
+            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
+            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
               <h3 className='text-sm font-bold'>
                 Como proteger seus dados em um mundo cada vez mais conectado
               </h3>
@@ -118,9 +116,9 @@ export const LateralBar = () => {
         </div>
         <div className='space-y-5'>
           <hr />
-          <div className='grid grid-cols-3 gap-x-4 '>
-            <div className='object-fill rounded-xl bg-stone-400'></div>
-            <div className='col-span-2 flex flex-col space-y-1'>
+          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
+            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
+            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
               <h3 className='text-sm font-bold'>
                 Como utilizar o poder dos dados para impulsionar seu negócio
               </h3>
@@ -139,72 +137,72 @@ export const LateralBar = () => {
         <h2 className='text-2xl font-bold'>Top categorias</h2>
         <div className='space-y-5'>
           <hr />
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
-              CLOUD
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
+              Cloud
+            </span>
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
               2
-            </span>
-          </div>
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
+            </Icon>
+          </Link>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
               REDES
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
+            </span>
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
               5
-            </span>
-          </div>
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
+            </Icon>
+          </Link>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
               INTELIGÊNCIA ARTIFICIAL
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
+            </span>
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
               1
-            </span>
-          </div>
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
+            </Icon>
+          </Link>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
               DADOS
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
+            </span>
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
               6
-            </span>
-          </div>
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
+            </Icon>
+          </Link>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
               VR
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
-              3
             </span>
-          </div>
-          <div className='flex justify-between items-center'>
-            <Link
-              href='#'
-              className='font-bold capitalize hover:text-ligth-primary-100'
-            >
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+              3
+            </Icon>
+          </Link>
+          <Link
+            href='#'
+            className='font-bold uppercase group flex justify-between items-center'
+          >
+            <span className='group-hover:text-ligth-primary-100 duration-300'>
               SEGURANÇA DA INFORMAÇÃO
-            </Link>
-            <span className='text-xl bg-ligth-primary-100 font-bold rounded-full w-10 h-10 p-5 flex justify-center items-center'>
-              3
             </span>
-          </div>
+            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+              3
+            </Icon>
+          </Link>
         </div>
       </section>
     </nav>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaBehance, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { CategoryProvider } from '@/lib/categoryProvider';
 import { HeaderProvider } from '@/lib/headerProvider';
+import Icon from '@/components/icon';
 
 export const metadata = {
   title: 'Am Blog',
@@ -20,35 +21,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang='pt-br'>
-      <HeaderProvider>
-        <CategoryProvider>
-          <body
-            className={`${poppins.className} text-ligth-basic-300 p-4 space-y-20 bg-zinc-100`}
-          >
+      <body
+        className={`${poppins.className} text-ligth-basic-300 p-4 space-y-20 bg-zinc-100`}
+      >
+        <HeaderProvider>
+          <CategoryProvider>
             {children}
             <footer className='-m-4 bg-white rounded-tl-2xl rounded-tr-2xl'>
               <div className='container mx-auto px-4 py-8 flex flex-col items-center space-y-5'>
                 <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
                   <Logo />
                   <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
-                    <Link
-                      href='#'
-                      className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-                    >
-                      <FaLinkedinIn className='md:text-xl' />
-                    </Link>
-                    <Link
-                      href='#'
-                      className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-                    >
-                      <FaBehance className='md:text-xl' />
-                    </Link>
-                    <Link
-                      href='#'
-                      className='bg-ligth-primary-100 rounded-full p-2 hover:text-white hover:bg-ligth-primary-200 duration-300'
-                    >
-                      <FaGithub className='md:text-xl' />
-                    </Link>
+                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                      <Link href='#'>
+                        <FaLinkedinIn />
+                      </Link>
+                    </Icon>
+                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                      <Link href='#'>
+                        <FaBehance />
+                      </Link>
+                    </Icon>
+                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                      <Link href='#'>
+                        <FaGithub />
+                      </Link>
+                    </Icon>
                   </div>
                 </div>
                 <hr className='w-full' />
@@ -69,9 +67,9 @@ export default function RootLayout({
                 </div>
               </div>
             </footer>
-          </body>
-        </CategoryProvider>
-      </HeaderProvider>
+          </CategoryProvider>
+        </HeaderProvider>
+      </body>
     </html>
   );
 }

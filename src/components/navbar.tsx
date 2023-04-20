@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BiSearch, BiMenu, BiX } from 'react-icons/bi';
 import { Logo } from './logo';
 import { useState } from 'react';
+import Icon from './icon';
 
 export const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -11,21 +12,21 @@ export const Navbar = () => {
       <div className='container mx-auto flex justify-between items-center relative'>
         <Logo />
         <div className='hidden sm:flex items-center space-x-16'>
-          <Link
-            href='#'
-            className='text-sm font-bold bg-ligth-primary-100 rounded-3xl py-2 px-5 hover:text-white hover:bg-ligth-primary-200 duration-300'
-          >
-            Contato
+          <Link href='#'>
+            <Icon tail='text-sm font-bold py-2 px-5'>Contato</Icon>
           </Link>
-          <BiSearch
-            className='w-10 h-10 bg-ligth-primary-100 rounded-full p-3 hover:text-white hover:bg-ligth-primary-200 duration-300 hover:cursor-pointer'
-            onClick={() => setMenu(true)}
-          />
+          <Icon
+            tail='w-10 h-10 p-3'
+            func={() => {
+              setMenu(true);
+            }}
+          >
+            <BiSearch />
+          </Icon>
         </div>
-        <BiMenu
-          className='w-10 h-10 bg-ligth-primary-100 rounded-full p-3 sm:hidden hover:text-white hover:bg-ligth-primary-200 duration-300 hover:cursor-pointer'
-          onClick={() => setMenu(true)}
-        />
+        <Icon tail='w-10 h-10 p-3 sm:hidden'>
+          <BiMenu onClick={() => setMenu(true)} />
+        </Icon>
       </div>
       <div
         className={`${
@@ -33,10 +34,14 @@ export const Navbar = () => {
         } bg-ligth-primary-100 w-screen h-screen absolute inset-0 z-50 `}
       >
         <div className='flex flex-col items-end p-5 space-y-32 container mx-auto'>
-          <BiX
-            className='w-10 h-10 rounded-full p-3 border m-0 border-black text-center hover:text-white hover:border-none hover:bg-ligth-primary-200 hover:cursor-pointer duration-300'
-            onClick={() => setMenu(false)}
-          />
+          <Icon
+            tail='w-10 h-10 p-3 text-center bg-white'
+            func={() => {
+              setMenu(false);
+            }}
+          >
+            <BiX />
+          </Icon>
           <div className='mx-auto space-y-10'>
             <Link href='#' className='sm:hidden text-3xl'>
               Contato
