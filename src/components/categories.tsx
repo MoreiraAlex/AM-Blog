@@ -21,31 +21,21 @@ export const Categories = () => {
     'Segurança da informação',
   ];
 
-  const [active, setActive] = useState(0);
-
   const settings = {
-    className: 'center',
-    centerMode: true,
     infinite: true,
-    centerPadding: '50px',
     slidesToShow: 5,
     slidesToScroll: 1,
-    speed: 1000,
+    speed: 500,
     dots: true,
     autoplay: true,
     autoplaySpeed: 3000,
-    cssEase: 'ease',
+    cssEase: 'linear',
     arrows: false,
-    afterChange: (current: number) => setActive(current),
     responsive: [
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          centerMode: false,
-          afterChange: () => {
-            setActive(99999);
-          },
         },
       },
       {
@@ -58,10 +48,6 @@ export const Categories = () => {
         breakpoint: 1280,
         settings: {
           slidesToShow: 4,
-          centerMode: false,
-          afterChange: () => {
-            setActive(99999);
-          },
         },
       },
     ],
@@ -75,11 +61,7 @@ export const Categories = () => {
           </h2>
           <Slider {...settings}>
             {cards.map((title, index) => (
-              <CategoryCard
-                key={index}
-                title={title}
-                active={index === active ? true : false}
-              />
+              <CategoryCard key={index} title={title} />
             ))}
           </Slider>
         </section>

@@ -1,16 +1,38 @@
 'use client';
 import Link from 'next/link';
 import { BiSearch, BiMenu, BiX } from 'react-icons/bi';
+import { BsLightbulbFill } from 'react-icons/bs';
 import { Logo } from './logo';
-import { useState } from 'react';
+import { use, useContext, useState } from 'react';
 import Icon from './icon';
+import { SetThemeContext, ThemeContext } from '@/lib/themeProvider';
 
 export const Navbar = () => {
   const [menu, setMenu] = useState(false);
+
+  function toggleTheme(theme: string): string {
+    if (theme === 'dark') return 'light';
+    return 'dark';
+  }
+
+  const theme = useContext(ThemeContext);
+  const setTheme = useContext(SetThemeContext);
+
   return (
     <nav>
       <div className='container mx-auto flex justify-between items-center relative'>
         <Logo />
+        <Icon
+          tail={`w-10 h-10 p-3 ${
+            theme == 'light' ? 'text-white hover:text-black' : ''
+          }`}
+          func={() => {
+            setTheme(toggleTheme(theme));
+          }}
+        >
+          <BsLightbulbFill />
+        </Icon>
+
         <div className='hidden sm:flex items-center space-x-16'>
           <Link href='#'>
             <Icon tail='text-sm font-bold py-2 px-5'>Contato</Icon>
@@ -31,9 +53,9 @@ export const Navbar = () => {
       <div
         className={`${
           menu ? 'block' : 'hidden'
-        } bg-ligth-primary-100 w-screen h-screen absolute inset-0 z-50 `}
+        } bg-ligth-primary-100 w-screen h-screen inset-0 z-50 dark:bg-dark-basic-100 fixed`}
       >
-        <div className='flex flex-col items-end p-5 space-y-32 container mx-auto'>
+        <div className='flex flex-col items-end space-y-32 container mx-auto pt-4'>
           <Icon
             tail='w-10 h-10 p-3 text-center bg-white'
             func={() => {
@@ -60,7 +82,10 @@ export const Navbar = () => {
                     className='rounded-3xl h-16 sm:w-8/12 px-5 w-full outline-none'
                   />
                 </label>
-                <button className='rounded-3xl h-16 w-full sm:w-3/12 bg-ligth-primary-200 text-white font-bold uppercase hover:text-ligth-primary-100 duration-300'>
+                <button
+                  className='rounded-3xl h-16 w-full sm:w-3/12 bg-ligth-primary-200 text-white font-bold uppercase hover:text-ligth-primary-100 duration-300
+                            dark:bg-ligth-primary-100 dark:text-black  hover:dark:bg-ligth-primary-200 hover:dark:text-white'
+                >
                   Procurar
                 </button>
               </form>

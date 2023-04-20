@@ -10,7 +10,10 @@ import Icon from './icon';
 export const LateralBar = () => {
   return (
     <nav className='space-y-10 order-2 col-span-2 xl:col-span-1'>
-      <section className='shadow-md w-full rounded-2xl bg-white flex items-center justify-center space-x-5 lg:space-x-0 px-4 py-8 lg:flex-col lg:space-y-3'>
+      <section
+        className='shadow-md w-full rounded-2xl bg-white flex items-center justify-center space-x-5 lg:space-x-0 px-4 py-8 lg:flex-col lg:space-y-3
+                  dark:bg-dark-basic-100'
+      >
         <div className='w-20 h-20 md:w-28 md:h-28 flex-shrink-0 bg-stone-400 rounded-full border-4 border-ligth-primary-100'></div>
         <div className='lg:text-center lg:space-y-3'>
           <div>
@@ -45,7 +48,7 @@ export const LateralBar = () => {
         </div>
       </section>
 
-      <section className='shadow-md w-full rounded-2xl bg-white mx-auto text-left px-4 py-8 space-y-5'>
+      <section className='shadow-md w-full rounded-2xl bg-white mx-auto text-left px-4 py-8 space-y-5 dark:bg-dark-basic-100'>
         <h2 className='text-3xl font-bold'>Newsletter</h2>
         <hr></hr>
         <p className='text-sm '>Receba notificações de novas postagens!</p>
@@ -55,13 +58,16 @@ export const LateralBar = () => {
             placeholder='Email'
             className='h-10 border-2 border-ligth-basic-200 rounded-3xl px-5 outline-none'
           />
-          <button className='rounded-3xl h-10 bg-ligth-primary-100 font-bold hover:text-white hover:bg-ligth-primary-200 duration-300'>
+          <button
+            className='rounded-3xl h-10 bg-ligth-primary-100 font-bold hover:text-white hover:bg-ligth-primary-200 duration-300 
+                    dark:text-black hover:dark:text-white'
+          >
             Inscrever
           </button>
         </form>
       </section>
 
-      <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5'>
+      <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5 dark:bg-dark-basic-100'>
         <h2 className='text-2xl font-bold'>Top views</h2>
         <div className='space-y-5'>
           <hr />
@@ -72,8 +78,14 @@ export const LateralBar = () => {
                 Por que a nuvem é essencial para o sucesso do seu negócio
               </h3>
               <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight className='text-ligth-primary-100 group-hover:text-ligth-primary-200' />
-                <span className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200'>
+                <FaArrowRight
+                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                />
+                <span
+                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                >
                   Leia Mais
                 </span>
               </Link>
@@ -89,8 +101,14 @@ export const LateralBar = () => {
                 Inteligência artificial: a nova fronteira da tecnologia
               </h3>
               <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight className='text-ligth-primary-100 group-hover:text-ligth-primary-200' />
-                <span className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200'>
+                <FaArrowRight
+                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                />
+                <span
+                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                >
                   Leia Mais
                 </span>
               </Link>
@@ -106,8 +124,14 @@ export const LateralBar = () => {
                 Como proteger seus dados em um mundo cada vez mais conectado
               </h3>
               <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight className='text-ligth-primary-100 group-hover:text-ligth-primary-200' />
-                <span className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200'>
+                <FaArrowRight
+                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                />
+                <span
+                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                >
                   Leia Mais
                 </span>
               </Link>
@@ -123,8 +147,14 @@ export const LateralBar = () => {
                 Como utilizar o poder dos dados para impulsionar seu negócio
               </h3>
               <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight className='text-ligth-primary-100 group-hover:text-ligth-primary-200' />
-                <span className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200'>
+                <FaArrowRight
+                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                />
+                <span
+                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
+                            group-hover:dark:text-dark-primary-200'
+                >
                   Leia Mais
                 </span>
               </Link>
@@ -133,7 +163,7 @@ export const LateralBar = () => {
         </div>
       </section>
 
-      <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5'>
+      <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5 dark:bg-dark-basic-100'>
         <h2 className='text-2xl font-bold'>Top categorias</h2>
         <div className='space-y-5'>
           <hr />
@@ -144,7 +174,10 @@ export const LateralBar = () => {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               Cloud
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon
+              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
+            >
               2
             </Icon>
           </Link>
@@ -155,7 +188,10 @@ export const LateralBar = () => {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               REDES
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon
+              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
+            >
               5
             </Icon>
           </Link>
@@ -166,7 +202,10 @@ export const LateralBar = () => {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               INTELIGÊNCIA ARTIFICIAL
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon
+              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
+            >
               1
             </Icon>
           </Link>
@@ -177,7 +216,10 @@ export const LateralBar = () => {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               DADOS
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon
+              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
+            >
               6
             </Icon>
           </Link>
@@ -188,7 +230,10 @@ export const LateralBar = () => {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               VR
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon
+              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
+            >
               3
             </Icon>
           </Link>

@@ -1,11 +1,13 @@
 import './globals.css';
-import { Poppins } from 'next/font/google';
 import { Logo } from '@/components/logo';
 import Link from 'next/link';
 import { FaBehance, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { CategoryProvider } from '@/lib/categoryProvider';
 import { HeaderProvider } from '@/lib/headerProvider';
 import Icon from '@/components/icon';
+import { ThemeProvider } from '@/lib/themeProvider';
+import Theme from '@/components/theme';
+import { Poppins } from 'next/font/google';
 
 export const metadata = {
   title: 'Am Blog',
@@ -21,54 +23,60 @@ export default function RootLayout({
 }) {
   return (
     <html lang='pt-br'>
-      <body
-        className={`${poppins.className} text-ligth-basic-300 p-4 space-y-20 bg-zinc-100`}
-      >
-        <HeaderProvider>
-          <CategoryProvider>
-            {children}
-            <footer className='-m-4 bg-white rounded-tl-2xl rounded-tr-2xl'>
-              <div className='container mx-auto px-4 py-8 flex flex-col items-center space-y-5'>
-                <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
-                  <Logo />
-                  <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
-                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
-                      <Link href='#'>
-                        <FaLinkedinIn />
-                      </Link>
-                    </Icon>
-                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
-                      <Link href='#'>
-                        <FaBehance />
-                      </Link>
-                    </Icon>
-                    <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
-                      <Link href='#'>
-                        <FaGithub />
-                      </Link>
-                    </Icon>
-                  </div>
+      <body>
+        <ThemeProvider>
+          <HeaderProvider>
+            <CategoryProvider>
+              <Theme>
+                <div
+                  className={`${poppins.className} p-4 pb-0 space-y-20 bg-slate-100 text-ligth-basic-300 dark:bg-dark-basic-200 dark:text-dark-basic-300`}
+                >
+                  {children}
+                  <footer className='-m-4 bg-white rounded-tl-2xl rounded-tr-2xl dark:bg-dark-basic-100'>
+                    <div className='container mx-auto px-4 py-8 flex flex-col items-center space-y-5'>
+                      <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
+                        <Logo />
+                        <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
+                          <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                            <Link href='#'>
+                              <FaLinkedinIn />
+                            </Link>
+                          </Icon>
+                          <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                            <Link href='#'>
+                              <FaBehance />
+                            </Link>
+                          </Icon>
+                          <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+                            <Link href='#'>
+                              <FaGithub />
+                            </Link>
+                          </Icon>
+                        </div>
+                      </div>
+                      <hr className='w-full' />
+                      <div className='flex flex-col items-center justify-center text-center'>
+                        <span className='text-sm font-bold'>
+                          AM Blog &copy; 2023 Todos os direitos reservados.
+                        </span>
+                        <span className='text-sm font-bold'>
+                          Desenvolvido por{' '}
+                          <a
+                            className='text-ligth-primary-100 hover:text-ligth-primary-200 hover:dark:text-dark-primary-200'
+                            href='https://github.com/MoreiraAlex'
+                            target='_blank'
+                          >
+                            Alex Moreira
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </footer>
                 </div>
-                <hr className='w-full' />
-                <div className='flex flex-col items-center justify-center text-center'>
-                  <span className='text-sm font-bold'>
-                    AM Blog &copy; 2023 Todos os direitos reservados.
-                  </span>
-                  <span className='text-sm font-bold'>
-                    Desenvolvido por{' '}
-                    <a
-                      className='text-ligth-primary-100 hover:text-ligth-primary-200'
-                      href='https://github.com/MoreiraAlex'
-                      target='_blank'
-                    >
-                      Alex Moreira
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </footer>
-          </CategoryProvider>
-        </HeaderProvider>
+              </Theme>
+            </CategoryProvider>
+          </HeaderProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -23,7 +23,7 @@ export const PostCard = ({
     <section
       className={`rounded-2xl bg-white shadow-lg flex flex-col sm:flex-row ${
         col ? `lg:flex-col ${hero ? '' : 'lg:max-w-md'}` : ''
-      }`}
+      } dark:bg-dark-basic-100`}
     >
       <div
         className={`w-1/2 h-64 bg-stone-400 rounded-2xl p-8 sm:h-auto ${
@@ -51,8 +51,14 @@ export const PostCard = ({
         <h2 className='text-2xl font-bold'>{title}</h2>
         <p className='text-sm'>{children}</p>
         <Link href='#' className='group flex gap-4 items-center'>
-          <FaArrowRight className='text-ligth-primary-100 group-hover:text-ligth-primary-200' />
-          <span className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200'>
+          <FaArrowRight
+            className='text-ligth-primary-100 group-hover:text-ligth-primary-200
+                      group-hover:dark:text-dark-primary-200'
+          />
+          <span
+            className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200 
+                     group-hover:dark:text-dark-primary-200'
+          >
             Leia Mais
           </span>
         </Link>
