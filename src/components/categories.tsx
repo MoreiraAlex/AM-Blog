@@ -28,7 +28,8 @@ export const Categories = () => {
     centerMode: true,
     infinite: true,
     centerPadding: '50px',
-    slidesToShow: 3,
+    slidesToShow: 5,
+    slidesToScroll: 1,
     speed: 1000,
     dots: true,
     autoplay: true,
@@ -36,26 +37,34 @@ export const Categories = () => {
     cssEase: 'ease',
     arrows: false,
     afterChange: (current: number) => setActive(current),
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 768,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+          afterChange: () => {
+            setActive(99999);
+          },
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          centerMode: false,
+          afterChange: () => {
+            setActive(99999);
+          },
+        },
+      },
+    ],
   };
   return (
     <>

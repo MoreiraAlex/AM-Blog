@@ -15,7 +15,7 @@ export const CategoryCard = ({
       <div
         className={`w-11/12 mx-auto ${
           active ? 'bg-red-300' : 'bg-stone-400'
-        } h-56 rounded-2xl flex items-center sm:h-72 justify-center 2xl:h-96`}
+        } h-56 rounded-2xl flex items-center sm:h-72 justify-center 2xl:h-96 p-4`}
       >
         <h2 className='uppercase font-bold text-sm sm:text-lg text-white text-center select-none'>
           {title}
