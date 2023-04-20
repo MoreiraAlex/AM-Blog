@@ -5,6 +5,7 @@ export default async function ListPost({ url }: { url: string }) {
   const data = await response.json();
   return (
     <>
+      {/* @ts-expect-error */}
       {data.map((repo) => (
         <PostCard
           key={repo.id}
