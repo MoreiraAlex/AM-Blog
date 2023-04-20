@@ -1,23 +1,62 @@
 'use client';
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 import { CategoryCard } from './categoryCard';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { UseCategoryContext } from '@/lib/categoryProvider';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export const Categories = () => {
   const slider = useRef<HTMLInputElement>(null);
 
   const { isVisible } = UseCategoryContext();
 
-  function MoveSlider(side: number) {
-    if (slider.current) {
-      if (side > 0) {
-        slider.current.scrollLeft -= slider.current.children[0].clientWidth;
-      } else {
-        slider.current.scrollLeft += slider.current.children[0].clientWidth;
-      }
-    }
-  }
+  const cards = [
+    'Redes',
+    'Inteligência artificial',
+    'Dados',
+    'Cloud',
+    'VR',
+    'Segurança da informação',
+  ];
+
+  const [active, setActive] = useState(0);
+
+  const settings = {
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    centerPadding: '50px',
+    slidesToShow: 3,
+    speed: 1000,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'ease',
+    arrows: false,
+    afterChange: (current: number) => setActive(current),
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    // ],
+  };
   return (
     <>
       {isVisible && (
@@ -25,31 +64,15 @@ export const Categories = () => {
           <h2 className='text-2xl sm:text-3xl capitalize font-bold'>
             Categorias
           </h2>
-          <div className='flex items-center justify-center'>
-            <span className='w-1/12 hidden sm:block'>
-              <BiChevronLeft
-                onClick={() => MoveSlider(1)}
-                className='text-3xl w-10 h-10 rounded-full p-1 bg-ligth-primary-100 mx-auto hover:text-white hover:bg-ligth-primary-200 duration-300 hover:cursor-pointer'
+          <Slider {...settings}>
+            {cards.map((title, index) => (
+              <CategoryCard
+                key={index}
+                title={title}
+                active={index === active ? true : false}
               />
-            </span>
-            <div
-              className='flex overflow-x-auto scroll-smooth snap-x w-full sm:w-10/12 scroll-bar'
-              ref={slider}
-            >
-              <CategoryCard title='Redes' />
-              <CategoryCard title='Inteligência artificial' />
-              <CategoryCard title='Dados' />
-              <CategoryCard title='Cloud' />
-              <CategoryCard title='VR' />
-              <CategoryCard title='Segurança da informação' />
-            </div>
-            <span className='w-1/12 hidden sm:block'>
-              <BiChevronRight
-                onClick={() => MoveSlider(0)}
-                className='text-3xl w-10 h-10 rounded-full p-1 bg-ligth-primary-100 mx-auto hover:text-white hover:bg-ligth-primary-200 duration-300 hover:cursor-pointer'
-              />
-            </span>
-          </div>
+            ))}
+          </Slider>
         </section>
       )}
     </>
