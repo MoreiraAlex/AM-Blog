@@ -55,7 +55,7 @@ export const Navbar = () => {
           menu ? 'block' : 'hidden'
         } bg-ligth-primary-100 w-screen h-screen inset-0 z-50 dark:bg-dark-basic-100 fixed`}
       >
-        <div className='flex flex-col items-end space-y-32 container mx-auto pt-4'>
+        <div className='flex flex-col items-end space-y-32 container mx-auto pt-4 px-4 sm:px-0'>
           <Icon
             tail='w-10 h-10 p-3 text-center bg-white'
             func={() => {

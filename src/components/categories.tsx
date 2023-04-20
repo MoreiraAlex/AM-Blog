@@ -28,7 +28,10 @@ export const Categories = () => {
     speed: 500,
     dots: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 500,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
     cssEase: 'linear',
     arrows: false,
     responsive: [
