@@ -10,17 +10,17 @@ export default function Footer() {
         <div className='flex items-center flex-col space-y-3 lg:space-y-0 lg:flex-row lg:justify-between lg:w-full'>
           <Logo />
           <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
-            <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+            <Icon variantes='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
               <Link href='#'>
                 <FaLinkedinIn />
               </Link>
             </Icon>
-            <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+            <Icon variantes='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
               <Link href='#'>
                 <FaBehance />
               </Link>
             </Icon>
-            <Icon tail='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
+            <Icon variantes='p-3 w-8 h-8 flex items-center justify-center md:text-xl md:w-10 md:h-10'>
               <Link href='#'>
                 <FaGithub />
               </Link>

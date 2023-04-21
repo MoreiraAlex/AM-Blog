@@ -29,17 +29,17 @@ export default function SideBar() {
             aspernatur ipsam quos ab a rem inventore! Vero, odio consectetur?
           </p>
           <div className='flex items-center justify-center space-x-1 md:justify-start lg:justify-center'>
-            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+            <Icon variantes='p-3 w-10 h-10 text-xl flex items-center justify-center'>
               <Link href='#'>
                 <FaLinkedinIn />
               </Link>
             </Icon>
-            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+            <Icon variantes='p-3 w-10 h-10 text-xl flex items-center justify-center'>
               <Link href='#'>
                 <FaBehance />
               </Link>
             </Icon>
-            <Icon tail='p-3 w-10 h-10 text-xl flex items-center justify-center'>
+            <Icon variantes='p-3 w-10 h-10 text-xl flex items-center justify-center'>
               <Link href='#'>
                 <FaGithub />
               </Link>
@@ -175,7 +175,7 @@ export default function SideBar() {
               Cloud
             </span>
             <Icon
-              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
               group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
             >
               2
@@ -189,7 +189,7 @@ export default function SideBar() {
               REDES
             </span>
             <Icon
-              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
                     group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
             >
               5
@@ -203,7 +203,7 @@ export default function SideBar() {
               INTELIGÊNCIA ARTIFICIAL
             </span>
             <Icon
-              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
                     group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
             >
               1
@@ -217,7 +217,7 @@ export default function SideBar() {
               DADOS
             </span>
             <Icon
-              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
                     group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
             >
               6
@@ -231,7 +231,7 @@ export default function SideBar() {
               VR
             </span>
             <Icon
-              tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
                     group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
             >
               3
@@ -244,7 +244,7 @@ export default function SideBar() {
             <span className='group-hover:text-ligth-primary-100 duration-300'>
               SEGURANÇA DA INFORMAÇÃO
             </span>
-            <Icon tail='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
+            <Icon variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
               3
             </Icon>
           </Link>
