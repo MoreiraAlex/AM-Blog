@@ -1,16 +1,14 @@
-import PostCard from './postCard';
+import PostCard from '../ui/postCard';
 
 interface Post {
   id: string;
   owner_id: string;
-  parent_id: null;
   slug: string;
   title: string;
   created_at: string;
-  updated_at: string;
-  published_at: string;
   owner_username: string;
   tabcoins: number;
+  link: string;
 }
 
 export default async function ListPost({
@@ -24,6 +22,11 @@ export default async function ListPost({
 }) {
   const response = await fetch(url);
   const data = await response.json();
+
+  if (col && !hero) {
+    data.shift();
+  }
+
   return (
     <>
       {data.map((repo: Post) => (
@@ -36,6 +39,7 @@ export default async function ListPost({
           title={repo.title}
           col={col}
           hero={hero}
+          link={`https://www.tabnews.com.br/${repo.owner_username}/${repo.slug}`}
         />
       ))}
     </>

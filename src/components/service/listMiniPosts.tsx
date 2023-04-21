@@ -1,6 +1,4 @@
-import { title } from 'process';
-import MiniPostCard from './miniPostCard';
-import PostCard from './postCard';
+import MiniPostCard from '../ui/miniPostCard';
 
 interface MiniPost {
   id: string;
@@ -20,7 +18,7 @@ export default async function ListMiniPosts({ url }: { url: string }) {
           key={repo.id}
           title={repo.title}
           thumb={`https://www.tabnews.com.br/api/v1/contents/${repo.owner_username}/${repo.slug}/thumbnail`}
-          link={repo.slug}
+          link={`https://www.tabnews.com.br/${repo.owner_username}/${repo.slug}`}
         />
       ))}
     </>

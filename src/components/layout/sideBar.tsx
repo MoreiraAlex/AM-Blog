@@ -6,7 +6,7 @@ import {
   FaArrowRight,
 } from 'react-icons/fa';
 import Icon from '../ui/icon';
-import ListMiniPosts from '../ui/listMiniPosts';
+import ListMiniPosts from '../service/listMiniPosts';
 
 export default function SideBar() {
   return (

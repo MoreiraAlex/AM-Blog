@@ -9,6 +9,7 @@ interface Iprops {
   author: string;
   category: number;
   thumb: string;
+  link: string;
   date: string;
   col?: boolean;
   hero?: boolean;
@@ -19,6 +20,7 @@ export default function PostCard({
   author,
   category,
   thumb,
+  link,
   date,
   col,
   hero,
@@ -39,7 +41,7 @@ export default function PostCard({
       <div
         style={{ backgroundImage: `url(${thumb})` }}
         className={`w-1/2 h-3/5 p-8 bg-center bg-contain bg-no-repeat bg-zinc-100 relative sm:h-auto 
-        after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-50 dark:after:opacity-10
+        after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-10 dark:after:opacity-0
          ${col ? `w-full lg:flex-grow ${hero ? '' : ''}` : ''}`}
       >
         <span className='px-5 py-2 bg-ligth-primary-100 rounded-3xl text-xs font-bold uppercase relative z-10 dark:text-black'>
@@ -61,7 +63,11 @@ export default function PostCard({
           </span>
         </div>
         <h2 className='text-lg lg:text-xl xl:text-2xl font-bold'>{title}</h2>
-        <Link href='#' className='group flex gap-4 items-center'>
+        <Link
+          href={link}
+          target='_blank'
+          className='group flex gap-4 items-center'
+        >
           <FaArrowRight
             className='text-ligth-primary-100 group-hover:text-ligth-primary-200
                       group-hover:dark:text-dark-primary-200'

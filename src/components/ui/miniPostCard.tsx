@@ -15,11 +15,15 @@ export default function MiniPostCard({ title, thumb, link }: Iprops) {
         <div
           style={{ backgroundImage: `url(${thumb})` }}
           className='object-fill rounded-xl col-span-3 bg-center bg-contain bg-no-repeat bg-zinc-100 relative 2xl:col-span-1
-          after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-20 dark:after:opacity-0'
+          after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-10 dark:after:opacity-0'
         ></div>
         <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
           <h3 className='text-sm font-bold'>{title}</h3>
-          <Link href={link} className='group flex gap-4 items-center'>
+          <Link
+            href={link}
+            target='_blank'
+            className='group flex gap-4 items-center'
+          >
             <FaArrowRight
               className='text-ligth-primary-100 group-hover:text-ligth-primary-200
                             group-hover:dark:text-dark-primary-200'

@@ -1,6 +1,6 @@
 import BannerParams from '@/components/params/bannerParams';
 import CategoryVisible from '@/components/params/categoryVisible';
-import ListPost from '@/components/ui/listPost';
+import ListPost from '@/components/service/listPost';
 
 export default function Home() {
   return (
@@ -27,8 +27,9 @@ export default function Home() {
           <div className='space-y-5 lg:flex lg:justify-center lg:space-y-0 lg:space-x-5'>
             {/* @ts-expect-error */}
             <ListPost
-              url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=2&strategy=relevant'
+              url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=3&strategy=relevant'
               col={true}
+              hero={false}
             />
           </div>
         </section>
@@ -36,7 +37,11 @@ export default function Home() {
           <h2 className='text-2xl font-bold md:text-3xl'>Lançamentos</h2>
           <div className='space-y-5'>
             {/* @ts-expect-error */}
-            <ListPost url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=4&strategy=new' />
+            <ListPost
+              url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=4&strategy=new'
+              col={false}
+              hero={false}
+            />
           </div>
         </section>
       </div>
