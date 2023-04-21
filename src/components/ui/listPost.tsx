@@ -1,4 +1,4 @@
-import { PostCard } from 'components/index';
+import PostCard from './postCard';
 
 export default async function ListPost({ url }: { url: string }) {
   const response = await fetch(url);

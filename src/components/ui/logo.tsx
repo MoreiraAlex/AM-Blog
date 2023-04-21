@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const cinzel = Cinzel({ subsets: ['latin'] });
 
-export const Logo = () => {
+export default function Logo() {
   return (
     <Link href='#'>
       <div className='relative'>
@@ -16,4 +16,4 @@ export const Logo = () => {
       </div>
     </Link>
   );
-};
+}

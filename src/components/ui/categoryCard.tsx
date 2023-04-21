@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const CategoryCard = ({ title }: { title: string }) => {
+export default function CategoryCard({ title }: { title: string }) {
   return (
     <Link
       href={title}
@@ -13,4 +13,4 @@ export const CategoryCard = ({ title }: { title: string }) => {
       </div>
     </Link>
   );
-};
+}

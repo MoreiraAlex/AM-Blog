@@ -1,9 +1,10 @@
 'use client';
-import { Navbar } from './navbar';
-import { UseHeaderContext } from '@/lib/headerProvider';
+import { useContext } from 'react';
+import Navbar from './navbar';
+import { HeaderContext } from '@/context/headerProvider';
 
-export const Header = () => {
-  const { params } = UseHeaderContext();
+export default function Header() {
+  const { params } = useContext(HeaderContext);
 
   return (
     <header className='space-y-10'>
@@ -22,4 +23,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+}

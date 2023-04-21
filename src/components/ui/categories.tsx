@@ -1,16 +1,13 @@
 'use client';
-import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
-import { CategoryCard } from './categoryCard';
-import { useRef, useState } from 'react';
-import { UseCategoryContext } from '@/lib/categoryProvider';
+import CategoryCard from './categoryCard';
+import { CategoryContext } from '@/context/categoryProvider';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useContext } from 'react';
 
-export const Categories = () => {
-  const slider = useRef<HTMLInputElement>(null);
-
-  const { isVisible } = UseCategoryContext();
+export default function Categories() {
+  const { isVisible } = useContext(CategoryContext);
 
   const cards = [
     'Redes',
@@ -71,4 +68,4 @@ export const Categories = () => {
       )}
     </>
   );
-};
+}

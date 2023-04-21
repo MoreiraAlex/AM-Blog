@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function useLocalStorage<T>(key: string, fallbackValue: T) {
+export function useLocalStorage<T>(key: string, fallbackValue: T) {
   const [value, setValue] = useState(fallbackValue);
   useEffect(() => {
     const stored = localStorage.getItem(key);
@@ -12,8 +12,4 @@ function useLocalStorage<T>(key: string, fallbackValue: T) {
   }, [key, value]);
 
   return [value, setValue] as const;
-}
-
-export function useTheme() {
-  return useLocalStorage<string>('theme', 'light');
 }

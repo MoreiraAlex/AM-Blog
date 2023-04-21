@@ -5,9 +5,9 @@ import {
   FaBehance,
   FaArrowRight,
 } from 'react-icons/fa';
-import Icon from './icon';
+import Icon from '../ui/icon';
 
-export const LateralBar = () => {
+export default function SideBar() {
   return (
     <nav className='space-y-10 order-2 col-span-2 xl:col-span-1'>
       <section
@@ -56,7 +56,7 @@ export const LateralBar = () => {
           <input
             type='text'
             placeholder='Email'
-            className='h-10 border-2 border-ligth-basic-200 rounded-3xl px-5 outline-none'
+            className='h-10 border-2 border-ligth-basic-200 rounded-3xl px-5 outline-none text-ligth-basic-300'
           />
           <button
             className='rounded-3xl h-10 bg-ligth-primary-100 font-bold hover:text-white hover:bg-ligth-primary-200 duration-300 
@@ -252,4 +252,4 @@ export const LateralBar = () => {
       </section>
     </nav>
   );
-};
+}

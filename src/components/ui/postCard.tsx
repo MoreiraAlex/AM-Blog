@@ -11,14 +11,14 @@ interface Iprops {
   hero?: boolean;
 }
 
-export const PostCard = ({
+export default function PostCard({
   title,
   author,
   date,
   children,
   col,
   hero,
-}: Iprops) => {
+}: Iprops) {
   return (
     <section
       className={`rounded-2xl bg-white shadow-lg flex flex-col sm:flex-row ${
@@ -65,4 +65,4 @@ export const PostCard = ({
       </div>
     </section>
   );
-};
+}

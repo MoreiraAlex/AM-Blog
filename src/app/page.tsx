@@ -1,26 +1,20 @@
-'use client';
-import Teste from '@/components/teste';
-import { UseCategoryContext } from '@/lib/categoryProvider';
-import { PostCard } from 'components/index';
-import { useEffect } from 'react';
+import BannerParams from '@/components/params/bannerParams';
+import CategoryVisible from '@/components/params/categoryVisible';
+import PostCard from '@/components/ui/postCard';
 
 export default function Home() {
-  const { True } = UseCategoryContext();
-
-  useEffect(() => {
-    True?.();
-  }, []);
-
   return (
     <>
       {/* @ts-expect-error */}
-      <Teste
+      <BannerParams
         title='Bem vindo ao'
         keyword='AM BLOG'
         subtitle='Alex Moreira Blog'
         description='Cobrimos todas as novidades e tendências do universo tecnológico, desde os gadgets mais recentes até as notícias mais quentes do setor.'
         styles='px-2 py-40 sm:px-12 sm:pt-64'
       />
+      {/* @ts-expect-error */}
+      <CategoryVisible visible={true} />
       <div className='col-span-5 space-y-10 xl:col-span-3'>
         <PostCard
           author='Alex Moreira'

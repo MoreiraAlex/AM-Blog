@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scroll-bar::-webkit-scrollbar {
+      display: none;
+  }
+
+  .light{
+    color: white;
+  }
+
+  .light:hover{
+    color: black!important;
+  }
+}

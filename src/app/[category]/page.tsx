@@ -1,6 +1,7 @@
-import ListPost from '@/components/listPost';
-import Teste from '@/components/teste';
-import { PostCard } from 'components/index';
+import BannerParams from '@/components/params/bannerParams';
+import CategoryVisible from '@/components/params/categoryVisible';
+import ListPost from '@/components/ui/listPost';
+import PostCard from '@/components/ui/postCard';
 
 interface Iprops {
   params: {
@@ -12,13 +13,15 @@ export default function Category({ params }: Iprops) {
   return (
     <>
       {/* @ts-expect-error */}
-      <Teste
+      <BannerParams
         title=''
         keyword={params.category}
         subtitle='Categoria'
         description=''
         styles='px-2 py-40 sm:px-10 sm:pb-5 sm:pt-30'
       />
+      {/* @ts-expect-error */}
+      <CategoryVisible visible={false} />
       <div className='col-span-5 space-y-10 xl:col-span-3'>
         <section className='space-y-5'>
           <h2 className='text-2xl font-bold md:text-3xl'>

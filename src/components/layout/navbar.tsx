@@ -2,32 +2,26 @@
 import Link from 'next/link';
 import { BiSearch, BiMenu, BiX } from 'react-icons/bi';
 import { BsLightbulbFill } from 'react-icons/bs';
-import { Logo } from './logo';
-import { use, useContext, useState } from 'react';
-import Icon from './icon';
-import { SetThemeContext, ThemeContext } from '@/lib/themeProvider';
+import Logo from '../ui/logo';
+import { useContext, useState } from 'react';
+import Icon from '../ui/icon';
+import { ThemeContext } from '@/context/themeProvider';
 
-export const Navbar = () => {
+export default function Navbar() {
   const [menu, setMenu] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   function toggleTheme(theme: string): string {
-    if (theme === 'dark') return 'light';
-    return 'dark';
+    return theme === 'dark' ? 'light' : 'dark';
   }
-
-  const theme = useContext(ThemeContext);
-  const setTheme = useContext(SetThemeContext);
-
   return (
     <nav>
       <div className='container mx-auto flex justify-between items-center relative'>
         <Logo />
         <Icon
-          tail={`w-10 h-10 p-3 ${
-            theme == 'light' ? 'text-white hover:text-black' : ''
-          }`}
+          variantes={`w-10 h-10 p-3 ${theme === 'light' ? theme : null}`}
           func={() => {
-            setTheme(toggleTheme(theme));
+            setTheme?.(toggleTheme(theme as string));
           }}
         >
           <BsLightbulbFill />
@@ -35,10 +29,10 @@ export const Navbar = () => {
 
         <div className='hidden sm:flex items-center space-x-16'>
           <Link href='#'>
-            <Icon tail='text-sm font-bold py-2 px-5'>Contato</Icon>
+            <Icon variantes='text-sm font-bold py-2 px-5'>Contato</Icon>
           </Link>
           <Icon
-            tail='w-10 h-10 p-3'
+            variantes='w-10 h-10 p-3'
             func={() => {
               setMenu(true);
             }}
@@ -46,7 +40,7 @@ export const Navbar = () => {
             <BiSearch />
           </Icon>
         </div>
-        <Icon tail='w-10 h-10 p-3 sm:hidden'>
+        <Icon variantes='w-10 h-10 p-3 sm:hidden'>
           <BiMenu onClick={() => setMenu(true)} />
         </Icon>
       </div>
@@ -57,7 +51,7 @@ export const Navbar = () => {
       >
         <div className='flex flex-col items-end space-y-32 container mx-auto pt-4 px-4 sm:px-0'>
           <Icon
-            tail='w-10 h-10 p-3 text-center bg-white'
+            variantes='w-10 h-10 p-3 text-center bg-white'
             func={() => {
               setMenu(false);
             }}
@@ -79,7 +73,7 @@ export const Navbar = () => {
                     type='text'
                     required
                     placeholder='Titulos, palavras chaves ou categorias...'
-                    className='rounded-3xl h-16 sm:w-8/12 px-5 w-full outline-none'
+                    className='rounded-3xl h-16 sm:w-8/12 px-5 w-full outline-none text-ligth-basic-300'
                   />
                 </label>
                 <button
@@ -95,4 +89,4 @@ export const Navbar = () => {
       </div>
     </nav>
   );
-};
+}
