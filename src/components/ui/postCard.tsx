@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 interface Iprops {
   title: string;
   author: string;
+  category: number;
+  thumb: string;
   date: string;
-  children: ReactNode;
   col?: boolean;
   hero?: boolean;
 }
@@ -14,29 +17,38 @@ interface Iprops {
 export default function PostCard({
   title,
   author,
+  category,
+  thumb,
   date,
-  children,
   col,
   hero,
 }: Iprops) {
+  const newDate = format(new Date(date), "yyyy',' dd 'dE' MMMM", {
+    locale: ptBR,
+  });
   return (
     <section
-      className={`rounded-2xl bg-white shadow-lg flex flex-col sm:flex-row ${
-        col ? `lg:flex-col ${hero ? '' : 'lg:max-w-md'}` : ''
+      className={`h-560 rounded-2xl bg-white shadow-lg overflow-hidden flex flex-col sm:flex-row sm:h-96 ${
+        col
+          ? `lg:flex-col ${
+              hero ? 'lg:h-560' : 'lg:max-w-md lg:basis-1/2 lg:h-560'
+            }`
+          : ''
       } dark:bg-dark-basic-100`}
     >
       <div
-        className={`w-1/2 h-64 bg-stone-400 rounded-2xl p-8 sm:h-auto ${
-          col ? `w-full ${hero ? 'lg:h-96' : 'lg:h-72'}` : ''
-        }`}
+        style={{ backgroundImage: `url(${thumb})` }}
+        className={`w-1/2 h-3/5 p-8 bg-center bg-contain bg-no-repeat bg-zinc-100 relative sm:h-auto 
+        after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-50 dark:after:opacity-10
+         ${col ? `w-full lg:flex-grow ${hero ? '' : ''}` : ''}`}
       >
-        <span className='px-5 py-2 bg-ligth-basic-300 rounded-3xl text-white text-xs font-bold uppercase'>
-          Cloud
+        <span className='px-5 py-2 bg-ligth-primary-100 rounded-3xl text-xs font-bold uppercase relative z-10 dark:text-black'>
+          {category}
         </span>
       </div>
       <div
-        className={`px-4 py-8 space-y-5 h-96 lg:h-80 ${
-          col ? `w-full ${hero ? '2xl:h-72' : ''}` : 'w-1/2 2xl:w-1/2'
+        className={`px-4 py-8 space-y-5 flex flex-col justify-evenly ${
+          col ? `w-full ${hero ? '' : 'lg:h-72'}` : 'w-1/2 2xl:w-1/2'
         }`}
       >
         <div className='grid grid-cols-5 items-center'>
@@ -45,11 +57,10 @@ export default function PostCard({
             {author}
           </span>
           <span className='col-span-2 text-sm text-ligth-basic-200 capitalize'>
-            {date}
+            {newDate}
           </span>
         </div>
-        <h2 className='text-2xl font-bold'>{title}</h2>
-        <p className='text-sm'>{children}</p>
+        <h2 className='text-lg lg:text-xl xl:text-2xl font-bold'>{title}</h2>
         <Link href='#' className='group flex gap-4 items-center'>
           <FaArrowRight
             className='text-ligth-primary-100 group-hover:text-ligth-primary-200

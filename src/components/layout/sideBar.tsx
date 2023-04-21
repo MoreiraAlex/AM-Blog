@@ -6,6 +6,7 @@ import {
   FaArrowRight,
 } from 'react-icons/fa';
 import Icon from '../ui/icon';
+import ListMiniPosts from '../ui/listMiniPosts';
 
 export default function SideBar() {
   return (
@@ -69,98 +70,8 @@ export default function SideBar() {
 
       <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5 dark:bg-dark-basic-100'>
         <h2 className='text-2xl font-bold'>Top views</h2>
-        <div className='space-y-5'>
-          <hr />
-          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
-            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
-            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
-              <h3 className='text-sm font-bold'>
-                Por que a nuvem é essencial para o sucesso do seu negócio
-              </h3>
-              <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight
-                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                />
-                <span
-                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                >
-                  Leia Mais
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className='space-y-5'>
-          <hr />
-          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
-            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
-            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
-              <h3 className='text-sm font-bold'>
-                Inteligência artificial: a nova fronteira da tecnologia
-              </h3>
-              <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight
-                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                />
-                <span
-                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                >
-                  Leia Mais
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className='space-y-5'>
-          <hr />
-          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
-            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
-            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
-              <h3 className='text-sm font-bold'>
-                Como proteger seus dados em um mundo cada vez mais conectado
-              </h3>
-              <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight
-                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                />
-                <span
-                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                >
-                  Leia Mais
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className='space-y-5'>
-          <hr />
-          <div className='grid grid-cols-7 gap-x-4 h-32 2xl:h-24 2xl:grid-cols-3'>
-            <div className='object-fill rounded-xl bg-stone-400 col-span-3 2xl:col-span-1'></div>
-            <div className='col-span-4 flex flex-col space-y-1 2xl:col-span-2'>
-              <h3 className='text-sm font-bold'>
-                Como utilizar o poder dos dados para impulsionar seu negócio
-              </h3>
-              <Link href='#' className='group flex gap-4 items-center'>
-                <FaArrowRight
-                  className='text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                />
-                <span
-                  className='text-sm font-bold uppercase text-ligth-primary-100 group-hover:text-ligth-primary-200
-                            group-hover:dark:text-dark-primary-200'
-                >
-                  Leia Mais
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
+        {/* @ts-expect-error */}
+        <ListMiniPosts url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=4&strategy=relevant' />
       </section>
 
       <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5 dark:bg-dark-basic-100'>

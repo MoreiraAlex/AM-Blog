@@ -41,6 +41,9 @@ module.exports = {
         'dark-primary-100': '#36ACA4',
         'dark-primary-200': '#36ACA4'
       },
+      height: {
+        '560':'35rem'
+      },
       maxWidth: {
         '12': '3rem'
       }
