@@ -7,6 +7,14 @@
       display: none;
   }
 
+  .custom-wrap {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .light{
     color: white;
   }

@@ -49,7 +49,7 @@ export default function PostCard({
         </span>
       </div>
       <div
-        className={`px-4 py-8 space-y-5 flex flex-col justify-evenly ${
+        className={`px-4 py-8 space-y-5 flex flex-col justify-between ${
           col ? `w-full ${hero ? '' : 'lg:h-72'}` : 'w-1/2 2xl:w-1/2'
         }`}
       >
@@ -62,7 +62,11 @@ export default function PostCard({
             {newDate}
           </span>
         </div>
-        <h2 className='text-lg lg:text-xl xl:text-2xl font-bold'>{title}</h2>
+        <abbr title={title} className='no-underline'>
+          <h2 className='text-lg lg:text-xl xl:text-2xl font-bold custom-wrap'>
+            {title}
+          </h2>
+        </abbr>
         <Link
           href={link}
           target='_blank'
