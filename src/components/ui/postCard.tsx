@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
@@ -40,17 +39,19 @@ export default function PostCard({
     >
       <div
         style={{ backgroundImage: `url(${thumb})` }}
-        className={`w-1/2 h-3/5 p-8 bg-center bg-contain bg-no-repeat bg-zinc-100 relative sm:h-auto 
+        className={`w-full h-3/5 p-8 bg-center bg-contain bg-no-repeat bg-zinc-100 relative sm:h-auto 
         after:absolute after:inset-0 after:w-full after:h-full after:rounded-2xl after:bg-black after:opacity-10 dark:after:opacity-0
-         ${col ? `w-full lg:flex-grow ${hero ? '' : ''}` : ''}`}
+         ${col ? `md:flex-grow ${hero ? '' : ''}` : 'sm:w-1/2'}`}
       >
         <span className='px-5 py-2 bg-ligth-primary-100 rounded-3xl text-xs font-bold uppercase relative z-10 dark:text-black'>
           {category}
         </span>
       </div>
       <div
-        className={`px-4 py-8 space-y-5 flex flex-col justify-between ${
-          col ? `w-full ${hero ? '' : 'lg:h-72'}` : 'w-1/2 2xl:w-1/2'
+        className={`w-full px-4 py-8 space-y-5 flex flex-col justify-between ${
+          col
+            ? `${hero ? '' : 'h-80 sm:h-full lg:h-72'}`
+            : 'h-80 sm:h-full sm:w-1/2 2xl:w-1/2'
         }`}
       >
         <div className='grid grid-cols-5 items-center'>

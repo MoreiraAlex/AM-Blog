@@ -5,7 +5,10 @@ import Categories from '@/components/ui/categories';
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <div className='p-4 pb-0 space-y-20 bg-slate-100 text-ligth-basic-300 dark:bg-dark-basic-200 dark:text-dark-basic-300'>
+    <div
+      className='p-4 pb-0 space-y-10 bg-slate-100 text-ligth-basic-300 lg:space-y-20
+              dark:bg-dark-basic-200 dark:text-dark-basic-300'
+    >
       <Header />
       <main className='space-y-20'>
         <Categories />

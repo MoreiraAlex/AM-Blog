@@ -15,16 +15,22 @@ export default async function ListPost({
   url,
   col,
   hero,
+  removeFirst,
+  removeLast,
 }: {
   url: string;
   col?: boolean;
   hero?: boolean;
+  removeFirst?: boolean;
+  removeLast?: boolean;
 }) {
   const response = await fetch(url);
   const data = await response.json();
 
-  if (col && !hero) {
+  if (removeFirst) {
     data.shift();
+  } else if (removeLast) {
+    data.pop();
   }
 
   return (

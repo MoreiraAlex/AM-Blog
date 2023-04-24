@@ -30,6 +30,7 @@ export default function Home() {
               url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=3&strategy=relevant'
               col={true}
               hero={false}
+              removeFirst={true}
             />
           </div>
         </section>
@@ -38,7 +39,7 @@ export default function Home() {
           <div className='space-y-5'>
             {/* @ts-expect-error */}
             <ListPost
-              url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=4&strategy=new'
+              url='https://www.tabnews.com.br/api/v1/contents?page=1&per_page=3&strategy=new'
               col={false}
               hero={false}
             />
