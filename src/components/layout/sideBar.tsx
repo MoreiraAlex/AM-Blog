@@ -1,14 +1,18 @@
 import Link from 'next/link';
-import {
-  FaLinkedinIn,
-  FaGithub,
-  FaBehance,
-  FaArrowRight,
-} from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaBehance } from 'react-icons/fa';
 import Icon from '../ui/icon';
 import ListMiniPosts from '../service/listMiniPosts';
 
 export default function SideBar() {
+  const categories = [
+    'Cloud',
+    'REDES',
+    'INTELIGÊNCIA ARTIFICIAL',
+    'DADOS',
+    'VR',
+    'SEGURANÇA DA INFORMAÇÃO',
+  ];
+
   return (
     <nav className='space-y-10 order-2 col-span-2 xl:col-span-1'>
       <section
@@ -77,88 +81,25 @@ export default function SideBar() {
       <section className='shadow-md hidden lg:block w-full rounded-2xl bg-white px-4 py-8 space-y-5 dark:bg-dark-basic-100'>
         <h2 className='text-2xl font-bold'>Top categorias</h2>
         <div className='space-y-5'>
-          <hr />
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              Cloud
-            </span>
-            <Icon
-              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
+          {categories.map((value, index) => (
+            <div key={index}>
+              <hr />
+              <Link
+                href={value}
+                className='font-bold uppercase group flex justify-between items-center'
+              >
+                <span className='group-hover:text-ligth-primary-100 duration-300'>
+                  {value}
+                </span>
+                <Icon
+                  variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
               group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
-            >
-              2
-            </Icon>
-          </Link>
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              REDES
-            </span>
-            <Icon
-              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
-                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
-            >
-              5
-            </Icon>
-          </Link>
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              INTELIGÊNCIA ARTIFICIAL
-            </span>
-            <Icon
-              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
-                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
-            >
-              1
-            </Icon>
-          </Link>
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              DADOS
-            </span>
-            <Icon
-              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
-                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
-            >
-              6
-            </Icon>
-          </Link>
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              VR
-            </span>
-            <Icon
-              variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200
-                    group-hover:dark:text-white group-hover:dark:bg-ligth-primary-200'
-            >
-              3
-            </Icon>
-          </Link>
-          <Link
-            href='#'
-            className='font-bold uppercase group flex justify-between items-center'
-          >
-            <span className='group-hover:text-ligth-primary-100 duration-300'>
-              SEGURANÇA DA INFORMAÇÃO
-            </span>
-            <Icon variantes='text-xl w-10 h-10 flex justify-center items-center group-hover:text-white group-hover:bg-ligth-primary-200 '>
-              3
-            </Icon>
-          </Link>
+                >
+                  {index + 1}
+                </Icon>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     </nav>
